@@ -10,10 +10,14 @@ VeriContest repository; this repository holds its trajectories.
 <release>/<entry-id>.jsonl.gz          one file per entry
 <release>/<entry-id>-000.jsonl.gz      shards, when an entry's file would exceed 50 MB
 <release>/<entry-id>-001.jsonl.gz
+<release>/lite/<entry-id>.jsonl.gz     the same records, for the VeriContest Lite problems only
 ```
 
 Each file is gzip-compressed JSON Lines: one JSON object per problem, in the order of the
 release's `leaderboard/problem_ids.txt`. Shards split that sequence into consecutive parts.
+A full-benchmark entry also has a file under `lite/` that keeps only the records of the
+release's Lite problems (`leaderboard/lite_problem_ids.txt`), in the same order; the Lite
+leaderboard links to these files.
 
 ## Records
 
